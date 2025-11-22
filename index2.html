@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+    <html lang="ru">
+    <head>
+    <meta charset="utf-8">
+        <title>Site</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                var container = document.querySelector('.popup-container');
+                var popupButtons = document.querySelectorAll('.open-popup');
+                    for (let i = 0; i < popupButtons.length; i++) {
+                        popupButtons[i].addEventListener('click', function(){
+                            container.style.display = 'flex';
+                });
+            }
+
+            container.addEventListener('click', function(event){
+                if(event.target == container) {
+                container.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="popup-container">
+            <form class="popup reg-form">
+                <h2>Регистрация на сайте</h2>
+                <div>
+                    <input type="text" placeholder="Введите Ваше имя" class="reg-form__input">
+                </div>
+                <div>
+                    <input type="email" placeholder="Введите Ваш емайл" class="reg-form__input">
+                </div>
+                <div>
+                    <input type="submit" value="Отправить">
+                </div>
+            </form>
+        </div>
+        <header>
+            <div class="fixed-container">
+                <div class="hrefs">
+                    <a href="#">Услуги</a>
+                    <a href="#">Портфолио</a>
+                    <a href="#">Стоимость</a>
+                </div>
+                <div class="phone">
+                    <span>+37529999999</span>
+                    <button class="light-button open-popup">Заказать звонок</button>
+                </div>
+            </div>
+        </header>
+        <section class="first-section">
+            <div class="fixed-container">
+                <h1>Дмитрий Алексеев</h1>
+                <p>Frontend-разработчик и веб-верстальщик</p>
+                <button class="dark-button open-popup">Узнать больше</button>
+            </div>            
+        </section>
+        <section class="second-section">
+            <div class="fixed-container">
+                <h2>Что я делаю</h2>
+                <div class="elem">
+                    <div>
+                        <img src="icons/1.png" alt="">
+                        <p>Вёрстка лэндинг-страниц и сайтов любой сложности</p>
+                    </div>
+                    <div>
+                        <img src="icons/2.png" alt="">
+                        <p>Адаптивная вёрстка под все браузеры и устройства</p>
+                    </div>
+                    <div>
+                        <img src="icons/3.png" alt="">
+                        <p>Frontend-разработка и программирование</p>
+                    </div>
+                    <div>
+                        <img src="icons/4.png" alt="">
+                        <p>Исправление и доработка существующей вёрстки</p>
+                    </div>
+                </div>
+                <button class="light-button open-popup">Узнать стоимость</button>
+            </div>
+        </section>
+        <section class="threeth-section">
+            <div class="fixed-container">
+                <h2>Примеры работ</h2>
+                <div class="exampl-work">
+                    <div>
+                        <img src="icons/e1.png" alt="">
+                        Сайт психолога Веры Антоновой
+                    </div>
+                    <div>
+                        <img src="icons/e2.png" alt="">
+                        Сайт магазина детской одежды
+                    </div>
+                    <div>
+                        <img src="icons/e3.png" alt="">
+                        Сайт магазина "Рыболов"
+                    </div>
+                </div>
+                <button class="light-button open-popup">Заказать проект</button>
+            </div>
+        </section>
+        <section class="last-section">
+            <div class="fixed-container">
+                <div class="for-h2">
+                    <h2>Адаптивная вёрстка под все устройства и браузеры от 1000р. всего за 4 часа. *</h2>
+                </div>
+                <div class="for-p">
+                    <p>*Сроки и стоимость могут отличаться от заявленных и рассчитываются индивидуально, в зависимости от сложности задач</p>
+                </div>               
+            </div> 
+        </section>
+        <footer>
+            <div class="fixed-container">
+                <div class="list">
+                    <a href="#">Услуги</a>
+                    <a href="#">Портфолио</a>
+                    <a href="#">Стоимость</a>
+                </div>
+                <div class="data">
+                    <p>dmitry@alekseev.com</p>
+                    <p>+7 (499) 995 77 55</p>
+                </div>
+                <div class="butt">
+                    <button class="light-button open-popup">Заказать звонок</button>
+                    <div class="medias">               
+                        <img src="icons/fb.png" alt="">
+                        <img src="icons/vk.png" alt="">
+                        <img src="icons/you.png" alt="">
+                        <img src="icons/telegram.png" alt="">
+                        <img src="icons/inst.png" alt="">
+                    </div>  
+                </div>         
+            </div>
+        </footer>
+    </body>
+</html>
