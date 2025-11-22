@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+    <html lang="ru">
+    <head>
+    <meta charset="utf-8">
+        <title>Site</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                background-color: #f6f7f9;   
+            }
+
+            * {
+                font-family: 'Roboto', sans-serif;
+            }
+            
+            header {
+                height: 100px;
+                padding: 0 40px;
+            }
+
+            header > div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .hrefs > a {
+                margin-right: 15px;
+            }
+
+            .phone > span {
+                margin-right: 20px;
+            }
+
+            a {
+                color: black;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+            
+            section {
+                padding: 40px;
+            }
+
+            .first-section {
+                height: 500px;
+            }
+
+            .fixed-container {
+                max-width: 1000px;
+                height: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .first-section > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                background-image: url('icons/man.png');
+                background-position: right center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            .first-section p {
+                padding: 0 0 30px 0;
+                margin: 0 0 25px 0;
+                font-size: 0.9em;
+            }
+
+            .first-section h1 {
+                margin-bottom: 20px;
+                font-size: 2.6em;
+            }
+ 
+            .second-section {
+                height: 360px;
+            }
+
+            .second-section h2 {
+                font-size: 2.1em;
+            }
+
+            .elem {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 25px;
+            }
+
+            .elem > div {
+                width: 160px;
+            }
+
+            .elem img {
+                width: 120px;
+            }
+
+            .elem p {
+                width: 220px;
+                font-size: 1em;
+            }
+
+            .threeth-section {
+                height: 400px;             
+            }
+
+            .threeth-section h2 {
+                font-size: 2em;
+            }
+
+            .exampl-work {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 40px;    
+            }
+
+            .exampl-work > div {
+                width: 300px;
+                margin-right: 35px;
+            }
+            .exampl-work img {
+                width: 270px;
+            }
+
+            .last-section {
+                height: 220px;
+                background-color: #3f2aff;
+                color: white; 
+            }
+
+            .last-section > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;         
+            }
+
+            .for-h2 {
+                width: 55%;
+                height: 50%;
+                font-size: 1.48em;
+                margin-bottom: 35px;
+                padding: 15px 0 45px 0;
+            }
+
+            .for-p {
+                width: 40%;
+                height: 50%;
+                font-size: 0.7em;
+                padding: 0 0 60px 0;
+            }
+
+            button {
+                padding: 10px 30px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+
+            .light-button {
+                border: 1px solid black;
+                background-color: transparent;
+            }
+
+            .dark-button {
+                border: 1px solid #3f2aff;
+                background-color: #3f2aff;
+                color: white;
+            }
+
+            footer {
+                height: 150px;
+                margin-bottom: 30px;
+                padding: 40px;
+            }
+
+            footer > div {
+                height: 140px;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .medias {           
+                padding: 20px;
+                display: flex;
+                justify-content: center;  
+            } 
+
+            .medias img {
+                width: 15px;
+                height: 15px; 
+                padding: 15px;               
+            }
+
+            .list {
+                margin-top: 15px;
+                margin-bottom: 15px;
+                width: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: flex-start;
+            }
+
+            .data {
+                margin-top: 10px;
+                width: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: first baseline; 
+            }
+
+            .butt {
+                width: 400px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;     
+            }
+
+            .popup-container {
+                background-color: #0000003d;
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                display: none;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .popup {
+                background-color: white;
+                width: 300px;
+                height: 300px;
+                border-radius: 5px;
+                padding: 30px;
+            }
+             .reg-form {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .reg-form > div {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 30px;
+            }
+
+            .reg-form__input {
+                width: 80%;
+            }
+
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                var container = document.querySelector('.popup-container');
+                var popupButtons = document.querySelectorAll('.open-popup');
+                    for (let i = 0; i < popupButtons.length; i++) {
+                        popupButtons[i].addEventListener('click', function(){
+                            container.style.display = 'flex';
+                });
+            }
+
+            container.addEventListener('click', function(event){
+                if(event.target == container) {
+                container.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="popup-container">
+            <form class="popup reg-form">
+                <h2>Регистрация на сайте</h2>
+                <div>
+                    <input type="text" placeholder="Введите Ваше имя" class="reg-form__input">
+                </div>
+                <div>
+                    <input type="email" placeholder="Введите Ваш емайл" class="reg-form__input">
+                </div>
+                <div>
+                    <input type="submit" value="Отправить">
+                </div>
+            </form>
+        </div>
+        <header>
+            <div class="fixed-container">
+                <div class="hrefs">
+                    <a href="#">Услуги</a>
+                    <a href="#">Портфолио</a>
+                    <a href="#">Стоимость</a>
+                </div>
+                <div class="phone">
+                    <span>+37529999999</span>
+                    <button class="light-button open-popup">Заказать звонок</button>
+                </div>
+            </div>
+        </header>
+        <section class="first-section">
+            <div class="fixed-container">
+                <h1>Дмитрий Алексеев</h1>
+                <p>Frontend-разработчик и веб-верстальщик</p>
+                <button class="dark-button open-popup">Узнать больше</button>
+            </div>            
+        </section>
+        <section class="second-section">
+            <div class="fixed-container">
+                <h2>Что я делаю</h2>
+                <div class="elem">
+                    <div>
+                        <img src="icons/1.png" alt="">
+                        <p>Вёрстка лэндинг-страниц и сайтов любой сложности</p>
+                    </div>
+                    <div>
+                        <img src="icons/2.png" alt="">
+                        <p>Адаптивная вёрстка под все браузеры и устройства</p>
+                    </div>
+                    <div>
+                        <img src="icons/3.png" alt="">
+                        <p>Frontend-разработка и программирование</p>
+                    </div>
+                    <div>
+                        <img src="icons/4.png" alt="">
+                        <p>Исправление и доработка существующей вёрстки</p>
+                    </div>
+                </div>
+                <button class="light-button open-popup">Узнать стоимость</button>
+            </div>
+        </section>
+        <section class="threeth-section">
+            <div class="fixed-container">
+                <h2>Примеры работ</h2>
+                <div class="exampl-work">
+                    <div>
+                        <img src="icons/e1.png" alt="">
+                        Сайт психолога Веры Антоновой
+                    </div>
+                    <div>
+                        <img src="icons/e2.png" alt="">
+                        Сайт магазина детской одежды
+                    </div>
+                    <div>
+                        <img src="icons/e3.png" alt="">
+                        Сайт магазина "Рыболов"
+                    </div>
+                </div>
+                <button class="light-button open-popup">Заказать проект</button>
+            </div>
+        </section>
+        <section class="last-section">
+            <div class="fixed-container">
+                <div class="for-h2">
+                    <h2>Адаптивная вёрстка под все устройства и браузеры от 1000р. всего за 4 часа. *</h2>
+                </div>
+                <div class="for-p">
+                    <p>*Сроки и стоимость могут отличаться от заявленных и рассчитываются индивидуально, в зависимости от сложности задач</p>
+                </div>               
+            </div> 
+        </section>
+        <footer>
+            <div class="fixed-container">
+                <div class="list">
+                    <a href="#">Услуги</a>
+                    <a href="#">Портфолио</a>
+                    <a href="#">Стоимость</a>
+                </div>
+                <div class="data">
+                    <p>dmitry@alekseev.com</p>
+                    <p>+7 (499) 995 77 55</p>
+                </div>
+                <div class="butt">
+                    <button class="light-button open-popup">Заказать звонок</button>
+                    <div class="medias">               
+                        <img src="icons/fb.png" alt="">
+                        <img src="icons/vk.png" alt="">
+                        <img src="icons/you.png" alt="">
+                        <img src="icons/telegram.png" alt="">
+                        <img src="icons/inst.png" alt="">
+                    </div>  
+                </div>         
+            </div>
+        </footer>
+    </body>
+</html>
